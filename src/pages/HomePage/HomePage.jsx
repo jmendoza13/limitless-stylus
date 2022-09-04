@@ -17,9 +17,9 @@ export default function HomePage() {
       <Typewriter 
       onInit={(typewriter) => {
         typewriter.typeString("Become Limitless")
-        .pauseFor(2000)
+        .pauseFor(3000)
         .deleteAll()
-        .pauseFor(5000)
+        .pauseFor(2000)
         .typeString("Limitless Stylus")
         .start();
       }}

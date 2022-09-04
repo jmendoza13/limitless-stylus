@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
+import "./NavBar.css"
 
 export default function NavBar({ user, setUser }) {
 
@@ -9,8 +10,8 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-      <Link to='/'>Home</Link>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <Link to='/' className="navitem">Home</Link>
       &nbsp; | &nbsp;
       <Link to='/ProductsDetails'>Product Details</Link>
       &nbsp; | &nbsp;
