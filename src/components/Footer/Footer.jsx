@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from 'react-router-dom';
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 
 function Footer() {
   return (
