@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import "./NavBar.css"
 
+
 export default function NavBar({ user, setUser }) {
 
   function handleLogOut() {
@@ -10,16 +11,26 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
-      <Link to='/' className="navitem">Home</Link>
-      &nbsp; | &nbsp;
-      <Link to='/ProductsDetails'>Product Details</Link>
-      &nbsp; | &nbsp;
-      <Link to='/Shop'>Online Shop</Link>
-      &nbsp; | &nbsp;
-      <Link to='/orders/new'>New Order</Link>
-      &nbsp; | &nbsp;
-      <Link to='' onClick={handleLogOut}>Log Out</Link>
+    <nav className="navbar fixed-top navbar-expand-md navbar-dark p-md-3 mx-auto">
+      <div className="container-fluid">
+      <a className="navbar-brand">Limitless Stylus</a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul className="navbar-nav justify-content-end">
+      <Link to='/' li className="navitem text-white">Home</Link>
+      &nbsp;  &nbsp;
+      <Link to='/ProductsDetails' li className="navitem text-white">Product Details</Link>
+      &nbsp;  &nbsp;
+      <Link to='/Shop' li className="navitem text-white">Online Shop</Link>
+      &nbsp;  &nbsp;
+      <Link to='/orders/new' li className="navitem text-white">New Order</Link>
+      &nbsp;  &nbsp;
+      <Link to='' onClick={handleLogOut} li className="navitem text-white">Log Out</Link>
+      </ul>
+      </div>
+      </div>
     </nav>
   );
 }
