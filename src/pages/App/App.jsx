@@ -26,15 +26,15 @@ export default function App() {
             <Route path='/OnlineShop' element={<OnlineShopPage />} />
             <Route path='/ProductsDetails' element={<ProductDetailsPage />} />
             <Route path='/' element={<HomePage />} />
-          </Routes>
-          <Footer>
-            <Routes>
+
+          
             <Route path='/AboutUs' element={<AboutUsPage />} />
             <Route path='/FAQ' element={<FaqPage />} />
             <Route path='/PrivacyPolicyPage' element={<PrivacyPolicyPage />} />
             <Route path='/ReturnPolicyPage' element={<ReturnPolicyPage />} />
-            </Routes>
-          </Footer>
+            
+          </Routes>
+          <Footer/>
         </>
         :
         <AuthPage setUser={setUser} />

@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
     <nav class="navbar navbar-expand-lg bg-light">
       <Link to='/'>Home</Link>
       &nbsp; | &nbsp;
-      <Link to='/Products'>Product Details</Link>
+      <Link to='/ProductsDetails'>Product Details</Link>
       &nbsp; | &nbsp;
       <Link to='/Shop'>Online Shop</Link>
       &nbsp; | &nbsp;

@@ -9,9 +9,9 @@ function Footer() {
       &nbsp; | &nbsp;
       <Link to='/FAQ'>FAQ</Link>
       &nbsp; | &nbsp;
-      <Link to='/PrivacyPolicy'>Privacy Policy</Link>
+      <Link to='/PrivacyPolicyPage'>Privacy Policy</Link>
       &nbsp; | &nbsp;
-      <Link to='/ReturnPolicy'>Return Policy</Link>
+      <Link to='/ReturnPolicyPage'>Return Policy</Link>
       &nbsp; | &nbsp;
       
     </footer>

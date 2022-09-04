@@ -1,5 +1,6 @@
 import { checkToken } from '../../utilities/users-service';
 import Typewriter from 'typewriter-effect';
+import "./HomePage.css";
 
 export default function HomePage() {
   
@@ -8,23 +9,22 @@ export default function HomePage() {
     console.log(expDate.toLocaleDateString())
   }
 
-function App() {
-  return (
-    <div className="App">
-      <Typewriter 
-      onInit={(typewriter) => {
-        typewriter.typeString("Become Limitless").start();
-      }}
-      />
-    </div>
-  );
-}
 
   return (
     <>
     <br></br>
-      <h1>Limitless Stylus</h1>
-      
+      <div className="TypeWriter">
+      <Typewriter 
+      onInit={(typewriter) => {
+        typewriter.typeString("Become Limitless")
+        .pauseFor(2000)
+        .deleteAll()
+        .pauseFor(5000)
+        .typeString("Limitless Stylus")
+        .start();
+      }}
+      />
+    </div>
     </>
   );
 }
