@@ -19,15 +19,13 @@ export default function NavBar({ user, setUser }) {
     </button>
     <div className="collapse navbar-collapse" id="collapsibleNavbar">
       <ul className="navbar-nav justify-content-end">
-      <Link to='/' li className="navitem text-white">Home</Link>
+      <Link to='/' className="navitem text-white">Home</Link>
       &nbsp;  &nbsp;
-      <Link to='/ProductsDetails' li className="navitem text-white">Product Details</Link>
+      <Link to='/ProductsDetails' className="navitem text-white">Product Details</Link>
       &nbsp;  &nbsp;
-      <Link to='/Shop' li className="navitem text-white">Online Shop</Link>
+      <Link to='/OnlineShop' className="navitem text-white">Online Shop</Link>
       &nbsp;  &nbsp;
-      <Link to='/orders/new' li className="navitem text-white">New Order</Link>
-      &nbsp;  &nbsp;
-      <Link to='' onClick={handleLogOut} li className="navitem text-white">Log Out</Link>
+      <Link to='' onClick={handleLogOut} className="navitem text-white">Log Out</Link>
       </ul>
       </div>
       </div>
