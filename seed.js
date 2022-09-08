@@ -1,7 +1,7 @@
 require('dotenv').config();
 require('./config/database');
 
-const Product = require ('./models/product');
+const Product = require ('./models/productSchema');
 
 (async function() {
 
