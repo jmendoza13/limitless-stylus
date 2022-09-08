@@ -1,4 +1,4 @@
-const Product = require('../../models/productSchema');
+const Product = require('../../models/product');
 
 module.exports = {
     index,
@@ -6,7 +6,7 @@ module.exports = {
 }
 
 async function index(req, res) {
-    const products = await Product.find({}).sort('name').exec();
+    const products = await Product.find({});
     res.json(products);
 }
 

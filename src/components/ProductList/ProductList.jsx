@@ -10,7 +10,6 @@ export default function ProductList({ productItems }) {
     return (
         <>
             {products}
-            {console.log(products, 'tacos')}
         </>
     )
 

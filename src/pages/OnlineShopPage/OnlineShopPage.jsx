@@ -3,18 +3,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import * as productsAPI from '../../utilities/products-api';
 import ProductList from "../../components/ProductList/ProductList";
 
-export default function OnlineShopPage({ user, setUser }) {
-  const [productItems, setProductItens] = useState([]);
+export default function OnlineShopPage() {
+  const [productItems, setProductItems] = useState([]);
   const navigate = useNavigate();
 
   useEffect(function () {
     async function getProducts() {
       const products = await productsAPI.getAll();
-      setProductItens(products);
+      setProductItems(products);
     }
     getProducts();
-    console.log(getProducts())
-
   }, []);
 
   return (
