@@ -1,6 +1,6 @@
 export default function LineItem({ product }){
 
-    console.log(product, "product")
+   
     return ( 
     <>
     <div className="product">
