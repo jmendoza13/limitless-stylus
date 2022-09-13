@@ -84,4 +84,4 @@ const lineProductSchema = new Schema({
   };
   
   
-  module.exports = mongoose.model('Order', productSchema);
+  module.exports = mongoose.model('Order', orderSchema);

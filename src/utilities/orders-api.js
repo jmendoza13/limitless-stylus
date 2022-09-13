@@ -13,8 +13,8 @@ export function addItemToCart(productId) {
   return sendRequest(`${BASE_URL}/cart/products/${productId}`, 'POST');
 }
 
-export function setItemQtyInCart(itemId, newQty) {
-  return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { itemId, newQty });
+export function setItemQtyInCart(productId, newQty) {
+  return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { productId, newQty });
 }
 
 // Updates the order's (cart's) isPaid property to true

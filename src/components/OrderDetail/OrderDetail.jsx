@@ -4,16 +4,17 @@ import LineItem from '../LineItem/LineItem';
 export default function OrderDetail({ order }) {
   if (!order) return null;
 
-  const lineItems = order.lineItems.map(item =>
-    <LineItem
-      lineItem={item}
+  console.log(order)
+  // const lineProducts = order.lineProducts.map(product =>
+  //   <LineItem 
+  //     product={product}
       
-      key={item._id}
-    />
-  );
+  //     key={product._id}
+  //   />
+  // );
 
   return (
-            {lineItems}
-    
+    <h1>orderpage</h1>
+          // {lineProducts}
   );
 }

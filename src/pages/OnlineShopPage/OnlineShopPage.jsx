@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { Link, useNavigate } from 'react-router-dom';
+//import { Link, useNavigate } from 'react-router-dom';
 import * as productsAPI from '../../utilities/products-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import ProductList from "../../components/ProductList/ProductList";
@@ -8,7 +8,7 @@ import OrderDetail from '../../components/OrderDetail/OrderDetail';
 export default function OnlineShopPage() {
   const [productItems, setProductItems] = useState([]);
   const [cart, setCart] = useState(null);
-  // const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   useEffect(function () {
     async function getProducts() {
@@ -16,11 +16,11 @@ export default function OnlineShopPage() {
       setProductItems(products);
     }
     getProducts();
-    // async function getCart() {
-    //   const cart = await ordersAPI.getCart();
-    //   setCart(cart);
-    // }
-    // getCart();
+    async function getCart() {
+      const cart = await ordersAPI.getCart();
+      setCart(cart);
+    }
+    getCart();
   }, []);
  
   async function handleAddtoOrder(productId) {
@@ -38,7 +38,7 @@ export default function OnlineShopPage() {
         handleAddtoOrder={handleAddtoOrder}
       />
       { <OrderDetail
-        order={ cart }
+        order={cart}
       /> }
     </>
   );

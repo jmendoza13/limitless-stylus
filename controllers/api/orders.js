@@ -3,7 +3,7 @@ const Order = require('../../models/order');
 module.exports = {
   cart,
   addToCart,
-  setItemQtyInCart,
+  setProductQtyInCart,
   checkout,
   // forUser
 };
@@ -20,17 +20,17 @@ async function cart(req, res) {
   res.json(cart);
 }
 
-// Add an item to the cart
+// Add an Product to the cart
 async function addToCart(req, res) {
   const cart = await Order.getCart(req.user._id);
-  await cart.addItemToCart(req.params.id);
+  await cart.addProductToCart(req.params.id);
   res.json(cart); 
 }
 
-// Updates an item's qty in the cart
-async function setItemQtyInCart(req, res) {
+// Updates an Product's qty in the cart
+async function setProductQtyInCart(req, res) {
   const cart = await Order.getCart(req.user._id);
-  await cart.setItemQty(req.body.productId, req.body.newQty);
+  await cart.setProductQty(req.body.productId, req.body.newQty);
   res.json(cart);
 }
 
