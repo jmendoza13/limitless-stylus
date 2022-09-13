@@ -3,22 +3,22 @@ const Schema = mongoose.Schema;
 
 const productSchema = require('./productSchema');
 
-const lineItemSchema = new Schema({
+const lineProductSchema = new Schema({
     qty: { type: Number, default: 1 },
-    item: productSchema
+    product: productSchema
   }, {
     timestamps: true,
     toJSON: { virtuals: true }
   });
   
-  lineItemSchema.virtual('extPrice').get(function() {
+  lineProductSchema.virtual('extPrice').get(function() {
     // 'this' is the lineItem subdoc
-    return this.qty * this.item.price;
+    return this.qty * this.product.price;
   });
   
   const orderSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    lineItems: [lineItemSchema],
+    lineProducts: [lineProductSchema],
     isPaid: { type: Boolean, default: false }
   }, {
     timestamps: true,
@@ -26,11 +26,11 @@ const lineItemSchema = new Schema({
   });
   
   orderSchema.virtual('orderTotal').get(function() {
-    return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
+    return this.lineProducts.reduce((total, product) => total + product.extPrice, 0);
   });
   
   orderSchema.virtual('totalQty').get(function() {
-    return this.lineItems.reduce((total, item) => total + item.qty, 0);
+    return this.lineProducts.reduce((total, product) => total + product.qty, 0);
   });
   
   orderSchema.virtual('orderId').get(function() {
@@ -50,34 +50,34 @@ const lineItemSchema = new Schema({
     );
   };
   
-  orderSchema.methods.addItemToCart = async function(itemId) {
+  orderSchema.methods.addProductToCart = async function(productId) {
     const cart = this;
-    const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
-    if (lineItem) {
-      lineItem.qty++;
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.product._id.equals(productId));
+    if (lineProduct) {
+      lineProduct.qty++;
     } else {
-      // Copy the item from the items collection
-      // Obtain the Item model
-      const Item = mongoose.model('Item');
-      const item = await Item.findById(itemId);
-      const newLineItem = { item };
-      cart.lineItems.push(newLineItem);
+      // Copy the Product from the Products collection
+      // Obtain the Product model
+      const Product = mongoose.model('Product');
+      const product = await Product.findById(productId);
+      const newLineProduct = { product };
+      cart.lineProducts.push(newLineProduct);
     }
     // Return the promise that's returned by the save method
     return cart.save();
   };
   
-  orderSchema.methods.setItemQty = function(itemId, newQty) {
+  orderSchema.methods.setItemQty = function(productId, newQty) {
     // this keyword is bound to the cart (order doc)
     const cart = this;
     // Find the line item in the cart for the menu item
-    const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
-    if (lineItem && newQty <= 0) {
-      // Calling remove, removes itself from the cart.lineItems array
-      lineItem.remove();
-    } else if (lineItem) {
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.product._id.equals(productId));
+    if (lineProduct && newQty <= 0) {
+      // Calling remove, removes itself from the cart.lineProducts array
+      lineProduct.remove();
+    } else if (lineProduct) {
       // Set the new qty - positive value is assured thanks to prev if
-      lineItem.qty = newQty;
+      lineProduct.qty = newQty;
     }
     // return the save() method's promise
     return cart.save();

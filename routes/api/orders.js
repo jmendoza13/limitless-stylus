@@ -6,7 +6,7 @@ const ordersCtrl = require('../../controllers/api/orders');
 router.get('/cart', ordersCtrl.cart);
 // GET /api/orders/user
 //router.get('/user', ordersCtrl.forUser);
-// POST /api/orders/cart/items/:id
+// POST /api/orders/cart/products/:id
 router.post('/cart/products/:id', ordersCtrl.addToCart);
 // POST /api/orders/cart/checkout
 router.post('/cart/checkout', ordersCtrl.checkout);

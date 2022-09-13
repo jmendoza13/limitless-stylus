@@ -23,10 +23,10 @@ export default function OnlineShopPage() {
     // getCart();
   }, []);
  
-  async function handleAddtoOrder(productItemId) {
+  async function handleAddtoOrder(productId) {
     // 1. Call the addItemToCart function in ordersAPI, passing to it the productItemId, and assign the resolved promise to a variable named cart.
-    console.log(productItems)
-    const updatedCart = await ordersAPI.addItemToCart(productItems[0]._id);
+    {console.log(productId, "hello")}
+    const updatedCart = await ordersAPI.addItemToCart(productId);
     // 2. Update the cart state with the updatedCart received from the server
     setCart(updatedCart);
   }
