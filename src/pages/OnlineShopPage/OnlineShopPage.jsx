@@ -16,16 +16,17 @@ export default function OnlineShopPage() {
       setProductItems(products);
     }
     getProducts();
-    async function getCart() {
-      const cart = await ordersAPI.getCart();
-      setCart(cart);
-    }
-    getCart();
+    // async function getCart() {
+    //   const cart = await ordersAPI.getCart();
+    //   setCart(cart);
+    // }
+    // getCart();
   }, []);
-
+ 
   async function handleAddtoOrder(productItemId) {
     // 1. Call the addItemToCart function in ordersAPI, passing to it the productItemId, and assign the resolved promise to a variable named cart.
-    const updatedCart = await ordersAPI.addItemToCart(productItemId);
+    console.log(productItems)
+    const updatedCart = await ordersAPI.addItemToCart(productItems[0]._id);
     // 2. Update the cart state with the updatedCart received from the server
     setCart(updatedCart);
   }
