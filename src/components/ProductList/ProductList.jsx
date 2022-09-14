@@ -1,4 +1,5 @@
 import ProductListItem from "../ProductListItem/ProductListItem"
+import "./ProductList.css"
 
 export default function ProductList({ productItems, handleAddtoOrder }) {
     const products = productItems.map(product =>
@@ -11,7 +12,7 @@ export default function ProductList({ productItems, handleAddtoOrder }) {
     return (
         <>
         <br></br><br></br><br></br>
-        <div className="row row-cols-3 row-cols-md-3 h-100">
+        <div className="row row-cols-3 row-cols-md-3">
             {products}
         </div>
         </>

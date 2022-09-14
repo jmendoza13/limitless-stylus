@@ -8,11 +8,11 @@
 
 <img src="https://i.imgur.com/gvCb16k.jpg"   width="600px" height="400px"/>
 
-<img src="https://imgur.com/nN9ldRw"   width="600px" height="400px"/>
+<img src="https://i.imgur.com/2q32m5r.png"   width="600px" height="400px"/>
 
 <img src="https://i.imgur.com/eexzt7g.png"   width="600px" height="400px"/>
 
-<img src="https://i.imgur.com/UNDWjLQ.png"   width="600px" height="400px"/>
+<img src="https://i.imgur.com/3FtuVIX.jpg"   width="600px" height="400px"/>
 
 ## :computer: Technologies Used
 
@@ -34,7 +34,7 @@
 * https://www.limitlessstylus.com/
 
 * MERN stack Limitless Stylus done by Justin Mendoza
-* https://crypto-chat-621.herokuapp.com/
+* https://limitless-stylus.herokuapp.com/
 
 * Limitless Stylus Trello Design Board
 * https://trello.com/b/c5q8qaWG/limitless-stylus
