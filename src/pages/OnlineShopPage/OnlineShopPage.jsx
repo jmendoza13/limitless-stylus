@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-//import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as productsAPI from '../../utilities/products-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import ProductList from "../../components/ProductList/ProductList";
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
-export default function OnlineShopPage() {
+export default function OnlineShopPage({ user, setUSer}) {
   const [productItems, setProductItems] = useState([]);
   const [cart, setCart] = useState(null);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(function () {
     async function getProducts() {
@@ -31,15 +31,29 @@ export default function OnlineShopPage() {
     setCart(updatedCart);
   }
 
+  async function handleChangeQty(productId, newQty) {
+    const updatedCart = await ordersAPI.setItemQtyInCart(productId, newQty);
+    setCart(updatedCart);
+
+  }
+
+  async function handleCheckout() {
+    await ordersAPI.checkout();
+    navigate('/orders');
+  }
+
+  console.log(cart, "hi")
   return (
     <>
       <ProductList
         productItems={productItems}
         handleAddtoOrder={handleAddtoOrder}
       />
-      { <OrderDetail
+      <OrderDetail
         order={cart}
-      /> }
+        handleChangeQty={handleChangeQty}
+        handleCheckout={handleCheckout}
+      />
     </>
   );
 }

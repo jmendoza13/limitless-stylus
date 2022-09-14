@@ -5,7 +5,7 @@ import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 
 function Footer() {
   return (
-    <footer className="fixed-bottom navbar navbar-expand bg-dark text-center text-lg-start text-white">
+    <footer className="sticky navbar navbar-expand bg-dark text-center text-lg-start text-white">
       <div className="me-5">
         <span>Get connected with us on social networks:</span>
       </div>

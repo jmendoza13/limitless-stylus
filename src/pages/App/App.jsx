@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import ProductDetailsPage from '../ProductDetailsPage/ProductDetailsPage';
 import OnlineShopPage from '../OnlineShopPage/OnlineShopPage';
+import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import ReturnPolicyPage from '../ReturnPolicyPage/ReturnPolicyPage';
 import PrivacyPolicyPage from '../PrivacyPolicyPage/PrivacyPolicyPage';
 import FaqPage from '../FaqPage/FaqPage';
@@ -23,6 +24,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
+            <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
             <Route path='/OnlineShop' element={<OnlineShopPage />} />
             <Route path='/ProductsDetails' element={<ProductDetailsPage />} />
             <Route path='/' element={<HomePage />} />
