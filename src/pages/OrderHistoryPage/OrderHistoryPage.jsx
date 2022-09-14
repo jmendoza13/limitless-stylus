@@ -20,11 +20,12 @@ export default function OrderHistoryPage({ user, setUser }) {
 
   return (
     <main className="OrderHistoryPage">
+      <br></br><br></br><br></br>
       <aside>
-        <Link to="/orders/new" className="btn btn-primary btn-lg">NEW ORDER</Link>
-        <UserLogOut user={user} setUser={setUser} />
+        <Link to="/OnlineShop" className="btn btn-primary btn-lg">NEW ORDER</Link>
       </aside>
       {/* Render an OrderList component (needs to be coded) */}
+      <br></br>
       <OrderList
         orders={orders}
         selectedOrder={selectedOrder}

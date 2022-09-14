@@ -22,7 +22,11 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
             <>
             <div className='hi' >
                 <div className='heading'>
-                    <h3>New Order - {order.orderId}</h3>
+                {order.isPaid ?
+                    <span>Order {order.orderId}</span>
+                    :
+                    <span>New Order</span>
+                }
                 </div>
                 <main className='item1-order'>
                     {ProductMap}

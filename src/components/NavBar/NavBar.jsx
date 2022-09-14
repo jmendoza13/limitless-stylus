@@ -25,6 +25,8 @@ export default function NavBar({ user, setUser }) {
       &nbsp;  &nbsp;
       <Link to='/OnlineShop' className="navitem text-white">Online Shop</Link>
       &nbsp;  &nbsp;
+      <Link to='/orders' className="navitem text-white">Order History</Link>
+      &nbsp;  &nbsp;
       <Link to='' onClick={handleLogOut} className="navitem text-white">Log Out</Link>
       </ul>
       </div>
