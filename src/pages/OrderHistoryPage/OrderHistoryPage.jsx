@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/orders-api';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderList from '../../components/OrderList/OrderList';
 

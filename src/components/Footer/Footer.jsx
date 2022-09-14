@@ -5,20 +5,20 @@ import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 
 function Footer() {
   return (
-    <footer className="sticky  navbar navbar-expand bg-dark text-center text-lg-start text-white">
+    <footer className="fixed-bottom navbar navbar-expand bg-dark text-center text-lg-start text-white">
       <div className="me-5">
         <span>Get connected with us on social networks:</span>
       </div>
-      <MDBBtn className='m-1' style={{ backgroundColor: '#3b5998' }} href='https://www.facebook.com/Limitlessstylus/'>
+      <MDBBtn className='m-1' style={{ backgroundColor: '#3b5998' }} href='https://www.facebook.com/Limitlessstylus/'>Facebook
         <MDBIcon fab icon='facebook-f' />
       </MDBBtn>
-      <MDBBtn className='m-1' style={{ backgroundColor: '#55acee' }} href='https://twitter.com/LimitlessStylus'>
+      <MDBBtn className='m-1' style={{ backgroundColor: '#55acee' }} href='https://twitter.com/LimitlessStylus'>Twitter
         <MDBIcon fab icon='twitter' />
       </MDBBtn>
-      <MDBBtn className='m-1' style={{ backgroundColor: '#ac2bac' }} href='https://www.instagram.com/limitlessstylus/'>
+      <MDBBtn className='m-1' style={{ backgroundColor: '#ac2bac' }} href='https://www.instagram.com/limitlessstylus/'>Instagram
         <MDBIcon fab icon='instagram' />
       </MDBBtn>
-      <MDBBtn className='m-1' style={{ backgroundColor: '#ed302f' }} href='https://www.youtube.com/channel/UC6FObNxyEwHCO8ELf4t7TPQ'>
+      <MDBBtn className='m-1' style={{ backgroundColor: '#ed302f' }} href='https://www.youtube.com/channel/UC6FObNxyEwHCO8ELf4t7TPQ'>YouTube
         <MDBIcon fab icon='youtube' />
       </MDBBtn>
       <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -34,7 +34,7 @@ function Footer() {
       &nbsp; | &nbsp;
       </div>
       <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            
+            <br></br>
             <h6 className="text-uppercase fw-bold">Contact</h6>
             
             <p><i className="fas fa-home mr-3"></i>388 Lyndale Ave Staten Island, NY 10312</p>
