@@ -8,6 +8,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
         lineProduct={product}
         isPaid={order.isPaid}
         handleChangeQty={handleChangeQty}
+        handleCheckout={handleCheckout}
         key={product._id}
       />
     );

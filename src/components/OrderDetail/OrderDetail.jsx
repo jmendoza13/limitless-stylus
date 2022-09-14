@@ -1,4 +1,4 @@
-import LineItem from '../LineItem/LineItem';
+import LineProduct from '../LineProduct/LineProduct';
 import './OrderDetail.css'
 
 // Used to display the details of any order, including the cart (unpaid order)
@@ -7,8 +7,8 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
 
   console.log(order, "hello")
   const ProductMap = order.lineProducts.map(product =>
-    <LineItem 
-    product={product}
+    <LineProduct 
+    lineProduct={product}
     isPaid={order.isPaid}
     handleChangeQty={handleChangeQty}
     handleCheckout={handleCheckout}
@@ -17,11 +17,6 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
     );
     
   return (
-    // <div>
-    //   <div className='border position-absolute top-0 end-0 text-bg-dark p-3'>
-    //   {ProductMap}
-    // </div>
-    // </div>
     <div className='OrderDetail'>
             {ProductMap.length? 
             <>

@@ -1,13 +1,8 @@
-import { checkToken } from '../../utilities/users-service';
 import Typewriter from 'typewriter-effect';
 import "./HomePage.css";
 
 export default function HomePage() {
   
-  async function handleCheckToken() {
-    const expDate = await checkToken();
-    console.log(expDate.toLocaleDateString())
-  }
 
 
   return (

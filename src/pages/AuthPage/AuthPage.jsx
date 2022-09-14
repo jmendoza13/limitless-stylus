@@ -9,14 +9,16 @@ export default function AuthPage({ setUser }) {
     <main>
       <br></br>
       <h1>Welcome to Limitless Stylus</h1>
-      <button onClick={() => setShowLogin(!showLogin)}>
-        {showLogin ? 'Sign Up' : 'Log In'}
-      </button>
+      <imgage src="https://i.imgur.com/B2cBBGP.jpg"></imgage>
+      <br></br>
       { showLogin ?
           <LoginForm setUser={setUser} />
           :
           <SignUpForm setUser={setUser} />
       }
+      <button type="submit" class="btn btn-primary btn-lg" button onClick={() => setShowLogin(!showLogin)}>
+        {showLogin ? 'Sign Up' : 'Log In'}
+      </button>
     </main>
   );
 }

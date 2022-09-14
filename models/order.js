@@ -67,7 +67,7 @@ const lineProductSchema = new Schema({
     return cart.save();
   };
   
-  orderSchema.methods.setItemQty = function(productId, newQty) {
+  orderSchema.methods.setProductQty = function(productId, newQty) {
     // this keyword is bound to the cart (order doc)
     const cart = this;
     // Find the line item in the cart for the menu item

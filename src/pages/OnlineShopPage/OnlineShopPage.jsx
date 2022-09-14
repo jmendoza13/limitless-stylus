@@ -5,7 +5,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 import ProductList from "../../components/ProductList/ProductList";
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
-export default function OnlineShopPage({ user, setUSer}) {
+export default function OnlineShopPage({ user, setUser}) {
   const [productItems, setProductItems] = useState([]);
   const [cart, setCart] = useState(null);
   const navigate = useNavigate();
